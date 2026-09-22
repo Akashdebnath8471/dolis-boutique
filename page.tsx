@@ -284,12 +284,8 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-[#eadbd5]/80 bg-[#fffaf8]/90 shadow-[0_8px_30px_rgba(70,40,35,0.05)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#home" className="group flex items-center gap-3">
-            <div className="h-11 w-11 overflow-hidden rounded-2xl border-2 border-white bg-[#f2d8da] shadow-sm">
-              <img
-                src="/images/doli-mother.jpg"
-                alt="Doli's Boutique"
-                className="h-full w-full object-cover"
-              />
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#f2d8da] text-xl shadow-sm">
+              🪡
             </div>
             <div>
               <div className="text-lg font-black tracking-tight sm:text-xl">
@@ -321,14 +317,6 @@ export default function Home() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a
-              href="https://facebook.com/share/19Z3Zoyyqa?mibextid=wwXIfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden rounded-full border border-[#d8adb4] bg-white px-4 py-3 text-sm font-bold text-[#a65c67] shadow-sm transition hover:-translate-y-0.5 hover:bg-[#fff1f2] lg:inline-flex"
-            >
-              f&nbsp; Facebook
-            </a>
             <a
               href={whatsappLink(orderMessage)}
               target="_blank"
@@ -442,7 +430,7 @@ export default function Home() {
             <div className="absolute -inset-6 rounded-[3rem] bg-gradient-to-br from-[#f2d8da] via-[#f8eee7] to-[#efd7cf] opacity-80 blur-2xl" />
             <div className="relative rounded-[2.4rem] border border-white/80 bg-white/75 p-3 shadow-[0_35px_100px_rgba(70,40,35,0.18)] backdrop-blur">
               <div className="grid grid-cols-2 gap-3">
-                {(designs.length ? designs : fallbackDesigns).slice(0, 4).map((design, index) => (
+                {fallbackDesigns.map((design, index) => (
                   <div
                     key={design.image_url}
                     className={`group overflow-hidden rounded-[1.7rem] ${
@@ -606,54 +594,105 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#f2d8da] to-[#f7e9d8] p-9 shadow-inner sm:p-14">
-            <div className="text-7xl">🪡</div>
-            <p className="mt-14 text-sm font-black tracking-[0.3em] text-[#a65c67]">
-              DOLI&apos;S BOUTIQUE
-            </p>
-            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
-              ছোট্ট উদ্যোগ,
-              <br />
-              ভালোবাসা দিয়ে তৈরি।
-            </h2>
-            <div className="mt-10 h-px bg-[#a65c67]/20" />
-            <p className="mt-5 text-sm leading-7 text-[#725f59]">
-              Pirojpur, Bongaon-এর home-based customised blouse making service।
-            </p>
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+
+          {/* Real founder / maker photo */}
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-br from-[#f2d8da] via-[#f8eee7] to-[#efd7cf] blur-2xl opacity-70" />
+
+            <div className="relative overflow-hidden rounded-[2.6rem] border border-white bg-white p-3 shadow-[0_25px_70px_rgba(70,40,35,0.14)]">
+              <div className="relative overflow-hidden rounded-[2.2rem]">
+                <img
+                  src="/images/doli-mother.jpg"
+                  alt="Doli's Boutique founder and maker"
+                  className="h-[520px] w-full object-cover object-center sm:h-[620px]"
+                />
+
+                <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/60 bg-white/90 p-4 shadow-xl backdrop-blur-md">
+                  <p className="text-xs font-black uppercase tracking-[0.22em] text-[#a65c67]">
+                    DOLI&apos;S BOUTIQUE
+                  </p>
+                  <p className="mt-1 font-black">
+                    ভালোবাসা দিয়ে তৈরি প্রতিটি কাজ
+                  </p>
+                  <p className="mt-1 text-xs text-[#806d67]">
+                    Pirojpur, Bongaon • Customised Blouse Making
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="absolute -bottom-5 -right-3 rounded-2xl border border-[#eadbd5] bg-white px-5 py-3 shadow-xl sm:-right-5">
+              <p className="text-xs font-bold text-[#806d67]">🧵 Home-Based</p>
+              <p className="mt-1 font-black text-[#302522]">Custom Blouse Studio</p>
+            </div>
           </div>
 
+          {/* Story */}
           <div>
             <p className="text-xs font-black uppercase tracking-[0.3em] text-[#a65c67]">
-              আমাদের সম্পর্কে
-            </p>
-            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
-              আপনার পছন্দকে সুন্দরভাবে ফুটিয়ে তোলাই আমাদের লক্ষ্য।
-            </h2>
-            <p className="mt-6 leading-8 text-[#725f59]">
-              Doli&apos;s Boutique হলো পিরোজপুর, বনগাঁ-র একটি home-based boutique,
-              যেখানে আপনার পছন্দ, মাপ এবং design অনুযায়ী customised blouse তৈরি করা হয়।
-            </p>
-            <p className="mt-4 leading-8 text-[#725f59]">
-              নিজের পছন্দের blouse-এর ছবি বা design reference WhatsApp-এ পাঠিয়ে
-              আগে থেকেই design, মাপ এবং প্রয়োজনীয় বিষয় নিয়ে আলোচনা করতে পারবেন।
+              আমাদের কথা
             </p>
 
-            <div className="mt-9 grid gap-4 sm:grid-cols-2">
+            <h2 className="mt-4 text-4xl font-black leading-tight sm:text-5xl">
+              একটি ছোট্ট ঘরোয়া উদ্যোগ,
+              <span className="block text-[#a65c67]">
+                ভালোবাসা দিয়ে তৈরি।
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-[#604f4a]">
+              Doli&apos;s Boutique হলো পিরোজপুর, বনগাঁ-র একটি home-based
+              customised blouse making service। এখানে প্রতিটি blouse তৈরি করা হয়
+              customer-এর পছন্দ, design এবং প্রয়োজন অনুযায়ী।
+            </p>
+
+            <p className="mt-4 leading-8 text-[#725f59]">
+              আপনার পছন্দের blouse-এর ছবি বা design reference WhatsApp-এ পাঠিয়ে
+              আগে থেকেই design, মাপ এবং প্রয়োজনীয় বিষয় নিয়ে আলোচনা করতে পারবেন।
+              লক্ষ্য একটাই—আপনার শাড়ি ও style-এর সঙ্গে মানানসই একটি blouse তৈরি করা।
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-3xl border border-[#eadbd5] bg-white p-6 shadow-sm">
-                <div className="text-3xl">❤️</div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff1f2] text-2xl">
+                  🧵
+                </div>
                 <p className="mt-4 font-black">যত্নসহকারে তৈরি</p>
                 <p className="mt-2 text-sm leading-6 text-[#806d67]">
-                  প্রতিটি কাজের প্রতি ব্যক্তিগত যত্ন।
+                  প্রতিটি customer-এর প্রয়োজন ও design-এর দিকে ব্যক্তিগত নজর।
                 </p>
               </div>
+
               <div className="rounded-3xl border border-[#eadbd5] bg-white p-6 shadow-sm">
-                <div className="text-3xl">✨</div>
-                <p className="mt-4 font-black">আপনার পছন্দ গুরুত্বপূর্ণ</p>
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#fff7ea] text-2xl">
+                  ✨
+                </div>
+                <p className="mt-4 font-black">আপনার পছন্দই গুরুত্বপূর্ণ</p>
                 <p className="mt-2 text-sm leading-6 text-[#806d67]">
-                  আপনার design ও style অনুযায়ী কাজ।
+                  Reference, style ও মাপ অনুযায়ী customised কাজ।
                 </p>
               </div>
+            </div>
+
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={whatsappLink(orderMessage)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-[#302522] px-6 py-3.5 text-sm font-black text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#463632]"
+              >
+                💬 WhatsApp-এ কথা বলুন
+              </a>
+
+              <a
+                href="https://facebook.com/share/19Z3Zoyyqa?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[#d8adb4] bg-white px-6 py-3.5 text-sm font-black text-[#9a5661] transition hover:-translate-y-0.5 hover:bg-[#fff1f2]"
+              >
+                f Facebook Page দেখুন
+              </a>
             </div>
           </div>
         </div>
@@ -902,19 +941,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 text-left sm:items-end sm:text-right">
-            <a
-              href="https://facebook.com/share/19Z3Zoyyqa?mibextid=wwXIfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-[#a65c67] hover:underline"
-            >
-              Facebook Page →
-            </a>
-            <div className="text-xs text-[#927b75]">
-              <p>© {new Date().getFullYear()} Doli&apos;s Boutique</p>
-              <p className="mt-1">Made with care for every blouse.</p>
-            </div>
+          <div className="text-left text-xs text-[#927b75] sm:text-right">
+            <p>© {new Date().getFullYear()} Doli&apos;s Boutique</p>
+            <p className="mt-1">Made with care for every blouse.</p>
           </div>
         </div>
       </footer>
